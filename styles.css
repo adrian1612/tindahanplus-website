@@ -16,3 +16,26 @@ footer{background:#111;color:#fff}.footer{border-top:1px solid #ffffff18;padding
 @media(max-width:900px){.nav nav{display:none}.hero-grid{grid-template-columns:1fr;gap:20px}.hero-product{margin-top:20px}.section-heading{grid-template-columns:1fr;gap:20px}.workflow-grid{grid-template-columns:1fr}.workflow-card.featured{grid-row:auto;min-height:600px}.workflow-card{min-height:390px}.feature-grid{grid-template-columns:repeat(2,1fr)}.feature-grid article:nth-child(2){border-right:0}.feature-grid article:nth-child(3){padding-left:0;border-top:1px solid var(--line)}.feature-grid article:nth-child(4){border-top:1px solid var(--line)}.data-grid{grid-template-columns:1fr;gap:55px}.screen-grid{grid-template-columns:1fr 1fr}.screen-grid figure:first-child{grid-column:span 2;grid-row:auto}.screen-grid figure:first-child img{height:500px}.screen-grid img{height:430px}.privacy-inner{grid-template-columns:auto 1fr}.outline-button{grid-column:2;justify-self:start}.footer-top{grid-template-columns:1fr 1fr}.footer-links{justify-content:flex-end}}
 @media(max-width:600px){.shell{width:calc(100% - 32px)}.header{height:68px}.nav-button{font-size:12px}.hero-grid{padding:50px 0 70px}.hero h1{font-size:clamp(3.4rem,17vw,5rem)}.hero-copy>p{font-size:16px}.hero-buttons{flex-direction:column;align-items:flex-start}.hero-facts{gap:14px;flex-wrap:wrap}.hero-product{height:500px}.hero-shot{width:255px;height:460px}.hero-glow{width:350px;height:350px}.hero-note{left:0;bottom:28px}.capability-row{width:720px;justify-content:flex-start;gap:42px}.capability-row span:not(:last-child):after{margin-left:42px}.section{padding:85px 0}.section-heading h2{font-size:2.8rem}.workflow-card,.workflow-card.featured{min-height:540px;padding:25px}.workflow-card img,.workflow-card.featured img{width:220px;height:340px;right:18px;bottom:-70px}.feature-grid{grid-template-columns:1fr}.feature-grid article,.feature-grid article+article{border-right:0;padding-left:0;padding-right:0;border-bottom:1px solid var(--line)}.feature-grid article:last-child{border-bottom:0}.screen-grid{grid-template-columns:1fr}.screen-grid figure:first-child{grid-column:auto}.screen-grid figure:first-child img,.screen-grid img{height:auto;aspect-ratio:9/16}.privacy-inner{grid-template-columns:1fr;padding:55px 0}.outline-button{grid-column:auto}.final{padding-bottom:65px}.final-inner{padding:30px;flex-wrap:wrap}.final .white{margin-left:0}.footer-top{grid-template-columns:1fr}.footer-links{justify-content:flex-start;flex-wrap:wrap}.footer-bottom{display:block}.footer-bottom span{display:block;margin-top:6px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* Interactive product motion */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.75,.25,1)}
+.reveal.is-visible{opacity:1;transform:none}
+.workflow-card{transition:transform .35s ease,box-shadow .35s ease,background-color .35s ease}
+.workflow-card:hover,.workflow-card:focus-visible{transform:translateY(-6px);box-shadow:0 24px 45px #11111114;outline:none}
+.workflow-card img{transition:transform .55s cubic-bezier(.2,.75,.25,1),filter .35s ease}
+.workflow-card:hover img,.workflow-card:focus-visible img{transform:rotate(-3deg) translateY(-12px) scale(1.025);filter:saturate(1.03)}
+.workflow-card.featured:hover img,.workflow-card.featured:focus-visible img{transform:rotate(-2deg) translateY(-14px) scale(1.025)}
+.hero-product{perspective:1000px}
+.hero-shot{animation:hero-float 6s ease-in-out infinite}
+.hero-note{animation:note-float 5s ease-in-out infinite}
+.hero-note:before{animation:status-pulse 2.2s ease-in-out infinite}
+.capability-row span{transition:color .25s ease,transform .25s ease}
+.capability-row span:hover{color:#fff;transform:translateY(-2px)}
+@keyframes hero-float{0%,100%{transform:rotate(3deg) translateY(0)}50%{transform:rotate(2deg) translateY(-8px)}}
+@keyframes note-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes status-pulse{0%,100%{box-shadow:0 0 0 0 #b8791900}50%{box-shadow:0 0 0 5px #b8791922}}
+@media(max-width:600px){.hero-shot{animation-duration:7s}.reveal{transform:translateY(14px)}}
+@media(prefers-reduced-motion:reduce){
+ .reveal{opacity:1;transform:none;transition:none}
+ .hero-shot,.hero-note{animation:none}
+ .workflow-card,.workflow-card img{transition:none}
+}
