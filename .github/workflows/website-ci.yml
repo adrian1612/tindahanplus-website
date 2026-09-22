@@ -1,0 +1,29 @@
+name: Website CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate static website
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Validate site structure, links, assets, sitemap and robots
+        run: python scripts/validate_site.py
+
+      - name: Validate HTML
+        run: npx --yes html-validate@9 "index.html" "privacy/index.html"
