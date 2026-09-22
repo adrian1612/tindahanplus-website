@@ -1,111 +1,35 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Privacy Policy for the Tindahan+ Android application.">
-  <title>Privacy Policy — Tindahan+</title>
-  <link rel="stylesheet" href="../styles.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111111">
+<meta name="description" content="Privacy Policy for the Tindahan+ Android application.">
+<link rel="stylesheet" href="../styles.css">
+<title>Privacy Policy — Tindahan+</title>
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav" aria-label="Primary">
-      <a class="brand" href="../">Tindahan+</a>
-      <div class="nav-links">
-        <a href="../">Home</a>
-        <a href="./" aria-current="page">Privacy Policy</a>
-      </div>
-    </nav>
-  </header>
-
-  <main class="policy">
-    <h1>Privacy Policy</h1>
-    <p class="effective">Effective date: September 18, 2026</p>
-
-    <section>
-      <h2>Overview</h2>
-      <p>Tindahan+ is an offline-first point-of-sale and small-business management application. Core business operations are designed to work locally on the Android device. Some optional features use internet-connected third-party services such as barcode lookup, advertising, and consent management.</p>
-    </section>
-
-    <section>
-      <h2>Data stored by the app</h2>
-      <p>Depending on how a store uses Tindahan+, the app may store business information such as store profile details, products, inventory movements, sales, receipt details, expenses, customer names or contact details, customer credit or Utang ledger entries, users or cashier names, shift records, audit records, and optional BIR configuration details.</p>
-      <p>This information is stored locally on the Android device in the app's SQLite database unless the user deliberately exports or shares it.</p>
-    </section>
-
-    <section>
-      <h2>Camera and image processing</h2>
-      <p>Tindahan+ can request camera permission for optional barcode scanning, product-thumbnail capture, and payment-reference capture.</p>
-      <p>Barcode scanning uses Google ML Kit or Google Code Scanner to detect supported barcode formats. Product photos are reduced to small app-owned JPEG thumbnails before being stored. Payment-reference capture uses on-device ML Kit text recognition to extract text from a payment confirmation image. Tindahan+ stores the confirmed payment-reference text with the sale and does not intentionally keep the captured payment-confirmation photo; the app attempts to remove the temporary captured file after recognition.</p>
-      <p>Manual product search and compatible HID or keyboard barcode scanners remain available without using camera barcode scanning.</p>
-    </section>
-
-    <section>
-      <h2>Internet access and barcode lookup</h2>
-      <p>The core POS workflow is designed to work offline. For an unknown numeric GTIN barcode, Tindahan+ may optionally request basic product-name or brand information from Open Food Facts so the merchant can review it before adding a product. The barcode value is included in that lookup request.</p>
-      <p>Tindahan+ does not use that lookup to obtain or infer the merchant's selling price, cost, stock, or customer information. Current business records are not automatically uploaded to a Tindahan+ backend.</p>
-    </section>
-
-    <section>
-      <h2>Advertising and consent</h2>
-      <p>Tindahan+ includes the Google Mobile Ads SDK and Google's User Messaging Platform (UMP).</p>
-      <ul>
-        <li>Advertising is enabled only for app tiers whose entitlement allows ads, currently the Free tier.</li>
-        <li>Eligible Free screens may display banner advertisements.</li>
-        <li>After a successful Inventory Stock In operation, the app may request an interstitial advertisement, subject to a cooldown.</li>
-        <li>No advertisement is requested before the Stock In database operation succeeds.</li>
-        <li>Failure to load, show, or obtain an advertisement does not undo or fail a completed POS or inventory operation.</li>
-        <li>UMP is used before ad requests to determine whether ads may be requested and to present consent messaging when required.</li>
-        <li>When UMP indicates that a privacy-options entry point is required, the user can reopen those privacy choices from the app.</li>
-      </ul>
-      <p>The advertising and consent SDKs may process information needed to provide ads, measure ad delivery, maintain consent state, prevent abuse, and diagnose service operation. Depending on device settings, region, consent choices, and Google SDK behavior, this can include device or app information, network information such as IP address, advertising identifiers when available, consent signals, ad interactions, and diagnostic data.</p>
-      <p>Tindahan+ does not intentionally add the store's sales, inventory, customer, Utang, cashier, receipt, or other locally stored business records to Google ad requests. Advertising and consent data processed by Google is handled under Google's own privacy practices and applicable consent choices.</p>
-    </section>
-
-    <section>
-      <h2>Analytics and cross-app tracking</h2>
-      <p>Tindahan+ does not currently include a separate app-owned behavioral analytics service. The Google Mobile Ads SDK may perform advertising-related measurement and processing. Any advertising-related tracking or personalization is subject to platform controls, applicable consent requirements, and Google Mobile Ads or UMP behavior.</p>
-    </section>
-
-    <section>
-      <h2>Backup, receipt and file sharing</h2>
-      <p>Tindahan+ allows the user to create database backups and to share or export backups or digital receipt text using Android's system sharing and file-picker interfaces. When a user chooses another application or storage provider through those interfaces, the selected third party handles the shared data according to that third party's own privacy practices.</p>
-    </section>
-
-    <section>
-      <h2>Accounts and authentication</h2>
-      <p>Tindahan+ does not require an online account for normal use. Owner, manager, and cashier PIN information is stored as salted password hashes rather than plaintext PINs. User and audit information remains part of the local database and therefore may be included in a user-created backup.</p>
-    </section>
-
-    <section>
-      <h2>Data retention and deletion</h2>
-      <p>Business records remain on the device until the user changes or removes them through supported app workflows or clears or uninstalls the application. Completed financial and business records may intentionally be preserved as immutable or audited history rather than silently deleted. User-created backup files remain wherever the user exported them until the user deletes them from that location.</p>
-      <p>Advertising and consent information handled by Google services is subject to Google's retention practices, device or platform controls, and the user's applicable consent and privacy choices.</p>
-    </section>
-
-    <section>
-      <h2>Security</h2>
-      <p>Tindahan+ uses local role and PIN controls, audit records for sensitive actions, validation around database backup and restore, and transaction-based inventory and ledger workflows. No application can guarantee absolute security. Store owners should protect their Android device, staff PINs, and exported backups.</p>
-    </section>
-
-    <section>
-      <h2>Children</h2>
-      <p>Tindahan+ is a business productivity application and is not directed to children.</p>
-    </section>
-
-    <section>
-      <h2>Changes to this policy</h2>
-      <p>This privacy policy may be updated when application behavior changes materially. The effective date at the top of this page will be updated when the policy changes.</p>
-    </section>
-
-    <section>
-      <h2>Contact</h2>
-      <p>For privacy inquiries regarding Tindahan+, please use the developer contact information provided on the Tindahan+ Google Play Store listing.</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2026 Tindahan+. Privacy Policy for com.adrianjaspio.tindahanplus.</p>
-  </footer>
-</body>
-</html>
+<a class="skip" href="#main">Skip to content</a>
+<header class="header"><div class="shell nav">
+<a class="brand" href="../"><span class="brand-logo"><img src="../Resources/AppLogo.png" alt=""></span><span>Tindahan<span>+</span></span></a>
+<nav aria-label="Main navigation"><a href="../#workflow">How it works</a><a href="../#features">Features</a><a href="../#screens">App screens</a><a href="./" aria-current="page">Privacy</a></nav>
+<a class="nav-button" href="../">Back to site <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H6m6-6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</div></header>
+<main id="main" class="policy-page"><div class="shell policy-shell">
+<div class="eyebrow"><span></span> Tindahan+ privacy</div><h1>Privacy Policy</h1><p class="policy-lead">How Tindahan+ stores business records, uses optional online services, and handles backups, advertising and consent.</p><p class="effective">Effective date: September 18, 2026</p>
+<div class="policy-layout"><aside><span>Contents</span><a href="#stored">Data stored</a><a href="#camera">Camera</a><a href="#internet">Internet</a><a href="#ads">Advertising</a><a href="#backup">Backup &amp; sharing</a><a href="#security">Security</a></aside><div class="policy">
+<section><h2>Overview</h2><p>Tindahan+ is an offline-first point-of-sale and small-business management application. Core business operations are designed to work locally on the Android device. Some optional features use internet-connected third-party services such as barcode lookup, advertising, and consent management.</p></section>
+<section id="stored"><h2>Data stored by the app</h2><p>Depending on how a store uses Tindahan+, the app may store store profile details, products, inventory movements, sales, receipt details, expenses, customer names or contact details, customer credit or Utang ledger entries, users or cashier names, shift records, audit records, and optional BIR configuration details.</p><p>This information is stored locally on the Android device in the app's SQLite database unless the user deliberately exports or shares it.</p></section>
+<section id="camera"><h2>Camera and image processing</h2><p>Tindahan+ can request camera permission for optional barcode scanning, product-thumbnail capture, and payment-reference capture. Barcode scanning uses Google ML Kit or Google Code Scanner. Product photos are reduced to small app-owned JPEG thumbnails before being stored. Payment-reference capture uses on-device ML Kit text recognition to extract text from a payment confirmation image.</p><p>Tindahan+ stores the confirmed payment-reference text with the sale and does not intentionally keep the captured payment-confirmation photo; the app attempts to remove the temporary captured file after recognition. Manual product search and compatible HID or keyboard barcode scanners remain available without camera barcode scanning.</p></section>
+<section id="internet"><h2>Internet access and barcode lookup</h2><p>The core POS workflow is designed to work offline. For an unknown numeric GTIN barcode, Tindahan+ may optionally request basic product-name or brand information from Open Food Facts so the merchant can review it before adding a product. The barcode value is included in that lookup request.</p><p>Tindahan+ does not use that lookup to obtain or infer the merchant's selling price, cost, stock, or customer information. Current business records are not automatically uploaded to a Tindahan+ backend.</p></section>
+<section id="ads"><h2>Advertising and consent</h2><p>Tindahan+ includes the Google Mobile Ads SDK and Google's User Messaging Platform (UMP). Advertising is enabled only for app tiers whose entitlement allows ads, currently the Free tier. Eligible Free screens may display banner advertisements. After a successful Inventory Stock In operation, the app may request an interstitial advertisement, subject to a cooldown. No advertisement is requested before the Stock In database operation succeeds, and ad failure does not undo a completed POS or inventory operation.</p><p>UMP is used before ad requests to determine whether ads may be requested and to present consent messaging when required. The advertising and consent SDKs may process information needed to provide ads, measure delivery, maintain consent state, prevent abuse, and diagnose service operation. Depending on device settings, region, consent choices, and Google SDK behavior, this can include device or app information, network information such as IP address, advertising identifiers when available, consent signals, ad interactions, and diagnostic data.</p><p>Tindahan+ does not intentionally add the store's sales, inventory, customer, Utang, cashier, receipt, or other locally stored business records to Google ad requests.</p></section>
+<section><h2>Analytics and cross-app tracking</h2><p>Tindahan+ does not currently include a separate app-owned behavioral analytics service. The Google Mobile Ads SDK may perform advertising-related measurement and processing. Any advertising-related tracking or personalization is subject to platform controls, applicable consent requirements, and Google Mobile Ads or UMP behavior.</p></section>
+<section id="backup"><h2>Backup, receipt and file sharing</h2><p>Tindahan+ allows the user to create database backups and to share or export backups or digital receipt text using Android's system sharing and file-picker interfaces. When a user chooses another application or storage provider through those interfaces, the selected third party handles the shared data according to its own privacy practices.</p></section>
+<section><h2>Accounts and authentication</h2><p>Tindahan+ does not require an online account for normal use. Owner, manager, and cashier PIN information is stored as salted password hashes rather than plaintext PINs. User and audit information remains part of the local database and may therefore be included in a user-created backup.</p></section>
+<section><h2>Data retention and deletion</h2><p>Business records remain on the device until the user changes or removes them through supported app workflows or clears or uninstalls the application. Completed financial and business records may intentionally be preserved as immutable or audited history. User-created backup files remain wherever the user exported them until the user deletes them from that location. Advertising and consent information handled by Google services is subject to Google's retention practices and applicable choices.</p></section>
+<section id="security"><h2>Security</h2><p>Tindahan+ uses local role and PIN controls, audit records for sensitive actions, validation around database backup and restore, and transaction-based inventory and ledger workflows. No application can guarantee absolute security. Store owners should protect their Android device, staff PINs, and exported backups.</p></section>
+<section><h2>Children</h2><p>Tindahan+ is a business productivity application and is not directed to children.</p></section>
+<section><h2>Changes to this policy</h2><p>This privacy policy may be updated when application behavior changes materially. The effective date at the top of this page will be updated when the policy changes.</p></section>
+<section><h2>Contact</h2><p>For privacy inquiries regarding Tindahan+, please use the developer contact information provided on the Tindahan+ Google Play Store listing.</p></section>
+</div></div></div></main>
+<footer><div class="shell footer"><div class="footer-top"><a class="brand" href="../"><span class="brand-logo"><img src="../Resources/AppLogo.png" alt=""></span><span>Tindahan<span>+</span></span></a><p>Practical tools for everyday store operations.</p><div class="footer-links"><a href="../#workflow">How it works</a><a href="../#features">Features</a><a href="../#screens">Screens</a><a href="./">Privacy</a></div></div><div class="footer-bottom"><span>© 2026 Tindahan+</span><span>com.adrianjaspio.tindahanplus</span></div></div></footer>
+</body></html>
